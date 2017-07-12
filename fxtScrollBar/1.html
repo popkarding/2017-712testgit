@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+
+        body {
+            background: #2f2a78;
+            overflow: hidden;
+        }
+
+        .warp {
+            width: 101px;
+            height: 387px;
+            background: #fff;
+            margin: 200px auto;
+        }
+
+        #box {
+            width: 88px;
+            height: 387px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #div1 {
+            width: 13px;
+            height: 387px;
+            float: right;
+            position: relative;
+            background: #ccc;
+        }
+
+        #div3 {
+            width: 9px;
+            height: 72px;
+            background: url(bg.png) 0px -12px no-repeat;
+            position: absolute;
+            top: 0;
+            left: 2px;
+        }
+
+        #div2 {
+            width: 13px;
+            height: 367px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        #top {
+            width: 11px;
+            height: 10px;
+            background: url(bg.png) 0 0 no-repeat;
+            position: absolute;
+            top: 0;
+            left: 1px;
+        }
+
+        #bottom {
+            width: 11px;
+            height: 10px;
+            background: url(bg.png) -12px 0 no-repeat;
+            position: absolute;
+            bottom: 0;
+            left: 1px;
+        }
+
+        #ul {
+            list-style: none;
+            width: 88px;
+            position: absolute;
+            top: 0;
+        }
+
+        li {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<section class="warp">
+    <div id="box">
+        <ul id="ul">
+            <!--<li>北京</li>
+            <li>北京</li>
+            <li>北京</li>
+            <li>北京</li>
+            <li>北京</li>-->
+        </ul>
+    </div>
+    <div id="div1">
+        <div id="top"></div>
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+        <div id="bottom"></div>
+    </div>
+</section>
+
+</body>
+</html>
+<script src="data.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var box = document.getElementById('box');
+    var ul = document.getElementById('ul');
+    var topbtn = document.getElementById('top');
+    var bottom = document.getElementById('bottom');
+    var scrollCon = document.getElementById('div2');
+    var scrollBar = document.getElementById('div3');
+    var m = 3;//过度效果的增加减少值
+    var timer1 = null;//定时器
+
+    //根据data生成结构
+    var str = '';
+    for (var i = 0; i < arrCity.length; i++) {
+        str += `<li>${arrCity[i].name}</li>`
+    }
+    ul.innerHTML = str;
+
+
+    var maxT = scrollCon.clientHeight - scrollBar.offsetHeight;//滚动条活动最大值
+    scrollBar.style.top = 0;//初始这个值没有取不到，初始化一下----------
+
+
+    //滚动条拖动----------------------
+    scrollBar.onmousedown = function (ev) {
+        ev.preventDefault();
+        ev.cancelBubble = true;
+        //clearInterval(timer1);
+        var st = ev.clientY - scrollBar.getBoundingClientRect().top;
+        var maxT = scrollCon.clientHeight - scrollBar.offsetHeight;
+        document.onmousemove = function (ev) {
+            ev.preventDefault();
+            var y = ev.clientY - st - scrollCon.getBoundingClientRect().top;
+            if (y < 0) {
+                y = 0
+            }
+            if (y > maxT) {
+                y = maxT
+            }
+            scrollBar.style.top = y + 'px';
+            var scale = y / maxT;  //y/maxT = scrollCon.offsetHeight/ul.offsetHeight
+            change(scale);
+        };
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    };
+
+
+    //点击滚动条---------------------------
+    scrollCon.onmousedown = function (ev) {
+        ev.preventDefault();
+        clearInterval(timer1);
+        if (ev.clientY - (scrollBar.offsetHeight + scrollBar.getBoundingClientRect().top) > 0) {
+            timer1 = setInterval(function () {
+                scrollBar.style.top = parseInt(scrollBar.style.top) + m + 'px';
+                var y = scrollBar.offsetTop;
+                var scale = y / maxT;
+                change(scale);
+                if (ev.clientY - (scrollBar.offsetHeight + scrollBar.getBoundingClientRect().top) <= 0) {
+                    //alert(1);
+                    clearInterval(timer1);
+                }
+            }, 20);
+        }
+
+        if (ev.clientY - scrollBar.getBoundingClientRect().top < 0) {
+            timer1 = setInterval(function () {
+                scrollBar.style.top = parseInt(scrollBar.style.top) - m + 'px';
+                var y = scrollBar.offsetTop;
+                var scale = y / maxT;
+                change(scale);
+                if (ev.clientY - scrollBar.getBoundingClientRect().top >= 0) {
+                    //alert(1);
+                    clearInterval(timer1);
+                }
+            }, 20);
+        }
+        document.onmouseup = function () {
+            clearInterval(timer1);
+            document.onmouseup = null;
+        }
+    };
+
+
+    //点击上箭头------------------------
+    topbtn.onmousedown = function (ev) {
+        ev.preventDefault();
+        clearInterval(timer1);
+        if ((scrollBar.getBoundingClientRect().top - scrollCon.getBoundingClientRect().top) > 0) {
+            timer1 = setInterval(function () {
+                scrollBar.style.top = parseInt(scrollBar.style.top) - m + 'px';
+                var y = scrollBar.offsetTop;
+                var scale = y / maxT;
+                change(scale);
+                if ((scrollBar.getBoundingClientRect().top - scrollCon.getBoundingClientRect().top) <= 0) {
+                    clearInterval(timer1);
+                }
+            }, 20);
+        }
+        document.onmouseup = function () {
+            clearInterval(timer1);
+            topbtn.onmouseup = null;
+
+        }
+    };
+
+
+    //下箭头--------------------------
+    bottom.onmousedown = function (ev) {
+        ev.preventDefault();
+        clearInterval(timer1);
+        if ((scrollBar.getBoundingClientRect().top - scrollCon.getBoundingClientRect().top) < maxT) {
+            timer1 = setInterval(function () {
+                scrollBar.style.top = parseInt(scrollBar.style.top) + m + 'px';
+                var y = scrollBar.offsetTop;
+                var scale = y / maxT;
+                change(scale);
+                if ((scrollBar.getBoundingClientRect().top - scrollCon.getBoundingClientRect().top) >= maxT) {
+                    clearInterval(timer1);
+                }
+            }, 20);
+        }
+        document.onmouseup = function () {
+            clearInterval(timer1);
+            topbtn.onmouseup = null;
+
+        }
+    };
+
+
+    //滚轮兼容-------------------------------
+    function addMouseWheel(init) {
+        init.ele.onmousewheel = fn;
+        init.ele.addEventListener('DOMMouseScroll', fn);
+        init.ele1.onmousewheel = fn;
+        init.ele1.addEventListener('DOMMouseScroll', fn);
+        function fn(ev) {
+            //true:上，false:下
+            console.dir(ev);
+            var onOff = null;
+            if (ev.wheelDelta) {
+                //其他
+                if (ev.wheelDelta > 0) {
+                    onOff = true;
+                } else {
+                    onOff = false;
+                }
+            } else {
+                //火狐
+                if (ev.detail < 0) {
+                    onOff = true;
+                } else {
+                    onOff = false;
+                }
+            }
+            if (onOff) {
+                //上
+                typeof init.fnUp == 'function' && init.fnUp();
+            } else {
+                //下
+                typeof init.fnDown == 'function' && init.fnDown();
+            }
+        }
+    }
+
+    //滚轮事件传入参数-----------------------
+    addMouseWheel({
+        ele: box,
+        ele1: scrollCon,
+        fnUp: function () {
+
+            scrollBar.style.top = parseInt(scrollBar.style.top) + m + 'px';
+            var y = scrollBar.offsetTop;
+            if (y < 0) {
+                y = 0;
+                scrollBar.style.top = 0;
+            }
+            if (y > maxT) {
+                y = maxT;
+                scrollBar.style.top = y + 'px';
+
+            }
+
+            var scale = y / maxT;  //y/maxT = scrollCon.offsetHeight/ul.offsetHeight
+            change(scale);
+        },
+        fnDown: function () {
+            var maxT = scrollCon.clientHeight - scrollBar.offsetHeight;
+            var y = scrollBar.offsetTop;
+
+            if (y < 0) {
+                y = 0;
+                scrollBar.style.top = y;
+
+            }
+            if (y > maxT) {
+                y = maxT;
+                scrollBar.style.top = y + 'px';
+            }
+            scrollBar.style.top = parseInt(scrollBar.style.top) - m + 'px';
+            var scale = y / maxT;  //y/maxT = scrollCon.offsetHeight/ul.offsetHeight
+            change(scale);
+        }
+    });
+
+
+    //进度条的比例变化同时左边变化----------------
+    function change(scale) {
+        ul.style.top = -(ul.offsetHeight - box.offsetHeight) * scale + 'px';
+    }
+
+
+</script>
