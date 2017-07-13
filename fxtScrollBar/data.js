@@ -1,4 +1,4 @@
-//这是个bug
+//这是另一个bug
 var arrCity =
 [
 	{ name:"请选择", sub:[{name:"请选择"}], type:1},
