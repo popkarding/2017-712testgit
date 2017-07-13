@@ -2,7 +2,7 @@
 //这是另一个bug
 var arrCity =
 [
-	{ name:"选择", sub:[{name:"选择"}], type:1},
+	{ name:"选择1", sub:[{name:"选择2"}], type:1},
 	{ name:"择", sub:[{name:"择"}], type:1},
 	{
   		name:"北京",
