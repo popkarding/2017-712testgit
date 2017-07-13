@@ -1,7 +1,9 @@
-//这是一个bug
+//试试
 var arrCity =
 [
-	{ name:"择", sub:[{name:"择"}], type:1},
+	{ name:"选择", sub:[{name:"选择"}], type:1},
+  { name:"选择1", sub:[{name:"选择1"}], type:2},
+
 	{
   		name:"北京",
   		sub:[{name:"请选择"},{name:"东城区"},{name:"西城区"},{name:"崇文区"},{name:"宣武区"},{name:"朝阳区"},{name:"海淀区"},{name:"丰台区"},{name:"石景山区"},{name:"房山区"},{name:"通州区"},{name:"顺义区"},{name:"昌平区"},{name:"大兴区"},{name:"怀柔区"},{name:"平谷区"},{name:"门头沟区"},{name:"密云县"},{name:"延庆县"},{name:"其他"}],
@@ -1955,7 +1957,7 @@ var arrCity =
       },
   {name:"其他"}],
   type:1
- },	
+ },
 	   {
   name:"香港",
   sub:[{name:"请选择"},{name:"中西区"},{name:"湾仔区"},{name:"东区"},{name:"南区"},{name:"深水埗区"},{name:"油尖旺区"},{name:"九龙城区"},{name:"黄大仙区"},{name:"观塘区"},{name:"北区"},{name:"大埔区"},{name:"沙田区"},{name:"西贡区"},{name:"元朗区"},{name:"屯门区"},{name:"荃湾区"},{name:"葵青区"},{name:"离岛区"},{name:"其他"}],
