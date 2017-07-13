@@ -1,7 +1,7 @@
 //试试
 var arrCity =
 [
-	{ name:"选择", sub:[{name:"选择"}], type:1},
+	{ name:"选择22", sub:[{name:"选择22"}], type:1},
   { name:"选择1", sub:[{name:"选择1"}], type:2},
 
 	{
