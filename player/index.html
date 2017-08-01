@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Groove播放器</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+		<link rel="stylesheet" type="text/css" href="css/music.css"/>
+		<link rel="stylesheet" type="text/css" href="css/player.css"/>
+	</head>
+	<body>
+		<!--主界面-->
+		<div id="conBg">
+			<span id="Loading">
+				<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			</span>
+		</div>
+		<div id="con">
+			<div id="mainVolumeShadow"></div>
+			<div id="LeftBg"></div>
+			<ul id="conLeft">
+				<li class="nav" title="最大化导航窗格">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
+				<li title="搜索">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-search"></i>
+					</a>
+					<div class="Playback">
+						<span id="Search"><i class="fa fa-search"></i></span>
+						<input type="text" />
+					</div>
+				</li>
+				<li title="我的音乐">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-music"></i>
+					</a>
+					<div class="Playback">
+						<span>我的音乐</span>
+					</div>
+				</li>
+				<li title="最近播放的内容">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-clock-o"></i>
+					</a>
+					<div class="Playback">
+						<span>最近播放的内容</span>
+					</div>
+				</li>
+				<li title="正在播放的音乐">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-align-left fa-rotate-270"></i>
+					</a>
+					<div class="Playback">
+						<span>正在播放的音乐</span>
+					</div>
+				</li>
+				<li title="正在播放的MV" id="mvPb">
+					<a href="javascript:;" class="icon">
+						<i class="fa fa-youtube-play"></i>
+					</a>
+					<div class="Playback">
+						<span>正在播放的MV</span>
+					</div>
+				</li>
+			</ul>
+			<div id="RightBg"></div>
+			<div id="conRight">
+				<h3 id="mymusic" title="我的音乐">我的音乐</h3>
+				<h3 id="myMv" title="我的MV">我的MV</h3>
+				<ul id="list">
+					<!--<li>
+						<img src="img/name.jpg"/>
+						<p class="song">我的未来不是梦</p>
+						<p class="singer">张雨生</p>
+					</li>-->
+				</ul>
+				<ul id="mvList">
+					<!--<li>
+						<img src="img/name.jpg"/>
+						<p class="mvName">我的未来不是梦</p>
+					</li>-->
+				</ul>
+			</div>
+			<div id="conBot">
+				<div id="player">
+					<div id="playLeft">
+						<img src="img/name.jpg" id="musicImg"/>
+						<div id="musicTxt">
+							<p class="Name">我的未来不是梦</p>
+							<p>张雨生</p>
+						</div>
+					</div>
+					<div id="playCen">
+						<span class="start text">0:00</span>
+						<div id="plan">
+							<div id="schedule">
+								<span id="progress"></span>
+								<span id="globe"></span>
+							</div>
+						</div>
+						<span class="end text">0:00</span>
+					</div>
+					<div id="playRight">
+						<div class="choice">
+							<span title="上一曲"><i class="fa fa-step-backward"></i></span>
+						</div>
+						<div class="choice">
+							<span title="播放"><i class="fa fa-play"></i></span>
+							<!--<span><i class="fa fa-pause"></i></span>-->
+						</div>
+						<div class="choice">
+							<span title="下一曲"><i class="fa fa-step-forward"></i></span>
+						</div><!-- 
+						<div class="choice">
+							<span title="随机播放"><i class="fa fa-random"></i></span>
+						</div> -->
+						<div class="choice">
+							<span title="重复播放"><i class="fa fa-refresh"></i></span>
+						</div>
+						<div class="choice">
+							<span title="音量" class="mainVolume"><i class="fa fa-volume-up"></i></span>
+							<!--<span title="静音"><i class="fa fa-volume-off"></i></span>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="mainVolumeCon">
+				<div class="mainVolumePlan">
+					<span id="mainVolumeGol"></span>
+				</div>
+			</div>
+		</div>
+		<!--音乐播放界面-->
+		<div id="zyhMusic">
+			<div id="auVolumeShadow"></div>
+			<div id="zyhbg"></div>
+			<div id="zyhLyric">
+				<div id="zyhDisk">
+					<img src="img/black.png" id="img"/>
+				</div>
+				<div id="zyhLrc">
+					<div id="lrcTxt"></div>
+				</div>
+			</div>
+			<div id="zyhTop">
+				<div id="zyhSong">
+					<img src="img/name.jpg" id="zyhImg"/>
+					<div id="zyhTxt">
+						<p id="zyhHelena">我的未来不是梦</p>
+						<p id="zyhSinger">张雨生</p>
+					</div>
+				</div>
+				<div id="zyhRail">
+					<div id="Rail">
+						<span class="zyhtext">0:00</span>
+						<div id="zyhplan">
+							<div id="zyhSchedule">
+								<span id="zyhProgress"></span>
+								<span id="zyhGlobe"></span>
+							</div>
+						</div>
+						<span class="zyhtext">0:00</span>
+					</div>
+				</div>
+				<div id="zyhAction">
+					<div id="actionLeft">
+						<div class="zyhChoice">
+							<span title="上一曲"><i class="fa fa-step-backward"></i></span>
+						</div>
+						<div class="zyhChoice">
+							<span title="暂停"><i class="fa fa-play"></i></span>
+							<!--<span><i class="fa fa-pause"></i></span>-->
+						</div>
+						<div class="zyhChoice">
+							<span title="下一曲"><i class="fa fa-step-forward"></i></span>
+						</div><!-- 
+						<div class="zyhChoice">
+							<span title="随机播放"><i class="fa fa-random"></i></span>
+						</div> -->
+						<div class="zyhChoice">
+							<span title="重复播放"><i class="fa fa-refresh"></i></span>
+						</div>
+						<div class="zyhChoice">
+							<span title="音量" class="auVolume"><i class="fa fa-volume-up"></i></span>
+							<!--<span title="静音"><i class="fa fa-volume-off"></i></span>-->
+						</div>
+					</div>
+					<div id="actionRight">
+						<div class="zyhBein">
+							<span id="mpPlaying" title="显示正在播放列表"><i class="fa fa-indent"></i></span>
+						</div>
+						<div class="zyhBein">
+							<span id='goBack' title="返回主界面"><i class="fa fa-reply"></i></span>
+						</div>
+					</div>
+					<span id="drag"><i class="fa fa-angle-up"></i></span>
+				</div>
+			</div>
+			<div id="zyhBot"><!-- controls="controls"  -->
+			<audio src="music/徐佳莹 - 浪费.mp3" id="music" ></audio>
+				<ul id="zyhList">
+					<!--<li>
+						<span class="audioList">
+							<span class="zyhCheck"><i class="fa fa-square-o"></i></span>
+							<span><i class="fa fa-check-square-o"></i></span>
+							<span class="transmit"><i class="fa fa-align-left fa-rotate-270"></i></span>
+							<span class="zyhLike">我的未来不是梦</span>
+						</span>
+						<span class="zyhOrder">张雨生</span>
+						<span class="zyhTime">00:00</span>
+					</li>-->
+				</ul>
+			</div>
+			<div id="auVolumeCon">
+				<div class="auVolumePlan">
+					<span id="auVolumeGol"></span>
+				</div>
+			</div>
+		</div>
+		<!--MV播放界面-->
+		<div id="zyhMv">
+			<div id="mvVolumeShadow"></div>
+			<video src="movie/Daylight.mp4" id="mov"></video>
+			<span id="zPlay" title="播放"><i class="fa fa-play"></i></span>
+			<!--<span><i class="fa fa-pause"></i></span>-->
+			<div id="zRail">
+				<div id="yRail">
+					<span class="ztext">00:00</span>
+					<div id="zplan">
+						<div id="zSchedule">
+							<span id="zProgress"></span>
+							<span id="zGlobe"></span>
+						</div>
+					</div>
+					<span class="ztext">00:00</span>
+				</div>
+				<div id="playBot">
+					<div id="zLeft">
+						<div class="zChoice">
+							<span title="上一个" id="prev"><i class="fa fa-step-backward"></i></span>
+						</div>
+						<div class="zChoice">
+							<span title="播放" id="iplay"><i class="fa fa-play"></i></span>
+							<!--<span><i class="fa fa-pause"></i></span>-->
+						</div>
+						<div class="zChoice">
+							<span title="停止" id="stop"><i class="fa fa-stop"></i></span>
+						</div>
+						<div class="zChoice">
+							<span title="下一个" id="next"><i class="fa fa-step-forward"></i></span>
+						</div>
+					</div>
+					<div id="zRight">
+						<div class="yChoice">
+							<span title="音量" class="volume"><i class="fa fa-volume-up"></i></span>
+							<!--<span title="静音"><i class="fa fa-volume-off"></i></span>-->
+						</div>
+						<div class="yChoice">
+							<span title="返回主界面" id="yClose"><i class="fa fa-reply"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="volumeCon">
+				<div class="volumePlan">
+					<span id="volumeGol"></span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/data.js"></script>
+		<script type="text/javascript" src="js/movieData.js"></script>
+		<script type="text/javascript" src="js/switch.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/movie.js"></script>
+	</body>
+</html>
