@@ -1,0 +1,82 @@
+*{margin:0;padding:0;}
+body{font-size:12px;font-family:"微软雅黑";}
+ol,ul,li{list-style:none;}
+a{text-decoration:none;display:block;}
+img{display:block;border:0;}
+input{border:0;}
+clearFix:after{content:".";height:0;clear:both;display:block;overflow:hidden;visibility:hidden;}
+body{width: 100%;height: 100%;overflow: hidden;position: absolute;background: #1a1a20;}
+#conBg{width: 100%;height: 100%;position: absolute;left: 0;top: 0;}
+#conBg #Loading{width: 200px;height: 200px;position:absolute;left: 50%;top: 50%;margin-left: -100px;margin-top: -100px;display: block;}
+#conBg #Loading i{width: 200px;height: 200px;font-size: 150px;line-height: 200px;text-align: center;color: rgba(255,255,255,0.6);}
+#con{width: 100%;height: 100%;background: url(../img/bg.jpg) no-repeat center 0;background-size: cover;min-width: 1200px;min-height: 600px;position: absolute;overflow: hidden;top: 0;}
+#con #LeftBg{height: auto;width: 5%;position: absolute;left: 0;top: 0;bottom: 100px;background: #000;opacity: 0.8;}
+#con #conLeft{height: auto;width: 5%;position: absolute;left: 0;top: 0;bottom: 100px;}
+#con #RightBg{height: auto;width: 95%;position: absolute;right: 0;top: 0;bottom: 100px;background: #000;opacity: 0.6;}
+#con #conRight{height: auto;width: 95%;position: absolute;right: 0;top: 0;bottom: 100px;}
+#con #conBot{width: 100%;height: 100px;position: absolute;left: 0;bottom: 0;background: #1a1a20;}
+#con #conLeft li{width: 100%;overflow: hidden;transition: background 0.2s;cursor: pointer;}
+#con #conLeft li:hover{background: rgba(255,255,255,0.2);}
+#con #conLeft .nav{margin-top: 20px;}
+#con #conLeft .icon{height: 80px;text-align: center;line-height: 80px;float: left;width: 100%;}
+#con #conLeft .icon i{font-size: 26px;color: #fff;width: 30px;height: 30px;text-align: center;line-height: 30px;}
+#con #conLeft .Playback{float: left;margin-left: 10px;width: 0;height: 0;position: relative;}
+#con #conLeft .Playback input{width: 75%;height: 50%;margin-top: 20px;outline: none;padding: 0 20% 0 5%;color: #666;font-size: 16px;background: #f7f7f7;}
+#con #conLeft .Playback #Search{width: 40px;height: 40px;position: absolute;right: 0;top: 20px;}
+#con #conLeft .Playback #Search i{width: 40px;height: 40px;line-height: 40px;text-align: center;position: absolute;right: 0;top: 0;color: #666;font-size: 20px;}
+#con #conLeft .Playback span{font-size: 18px;color: #fff;line-height: 80px;display: block;opacity: 0;}
+#con #conBot #player{height: 60px;padding: 20px;}
+#con #conBot #playLeft{height: 60px;width: 20%;float: left;transition: background 0.2s;cursor: pointer;}
+#con #conBot #playLeft:hover{background: rgba(0,0,0,0.2);}
+#con #conBot #playCen{height: 40px;width: 60%;float: left;padding-top: 20px;cursor: default;}
+#con #conBot #playRight{height: 40px;width: 20%;float: left;padding-top: 15px;}
+#con #conBot #playLeft #musicImg{width: 60px;height: 60px;float: left;}
+#con #conBot #playLeft #musicTxt{float: left;width: 60%;height: 55px;margin-left: 20px;padding-top: 5px;}
+#con #conBot #playLeft #musicTxt p{color: #fff;line-height: 24px;font-size: 14px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+#con #conBot #playLeft #musicTxt .Name{font-size: 16px;line-height: 28px;}
+#con #conBot #playCen .text{display: block;font-size: 14px;color: #fff;line-height: 24px;width: 40px;text-align: right;}
+#con #conBot #playCen .start{float: left;margin-left: 18px;}
+#con #conBot #playCen #plan{float: left;margin: 0 18px;width: 80%;height: 4px;padding: 10px 0;position: relative;}
+#con #conBot #playCen .end{float: left;}
+#con #conBot #playCen #plan #schedule{width: 100%;height: 4px;background: #ccc;border-radius: 2px;}
+#con #conBot #playCen #plan #progress{width: 0%;height: 4px;background: #a03535;position: absolute;top: 10px;left: 0;border-radius: 2px;}
+#con #conBot #playCen #plan #globe{position: absolute;top: 2px;left: 0%;width: 16px;height: 16px;background: #0078d7;text-align: center;border: 2px solid #fff;border-radius: 50%;cursor: pointer;}
+#con #conBot #playRight .choice{width: 20%;height: 24px;text-align: center;float: left;}
+#con #conBot #playRight .choice span{width: 24px;height: 24px;display: inline-block;cursor: pointer;padding: 5px;}
+#con #conBot #playRight .choice span:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#con #conBot #playRight .choice i{color: #fff;font-size: 20px;width: 24px;line-height: 24px;transition: color 0.2s;}
+#con #conBot #playRight .choice span:hover i{color: rgba(255,255,255,0.6);}
+#con #conRight #mymusic{width: 130px;height: 50px;font-size: 30px;font-weight: normal;line-height: 50px;margin: 25px 0;color: #fff;margin-left: 5%;float: left;cursor: pointer;}
+#con #conRight #myMv{width: 130px;height: 50px;font-size: 30px;font-weight: normal;line-height: 50px;margin: 25px 0;color: rgba(255,255,255,0.6);margin-left: 5%;float: left;cursor: pointer;}
+#con #conRight #list{width: 95%;height: auto;float: right;}
+#con #conRight #list li{width: 120px;height: 168px;float: left;margin: 20px 20px 0 0;cursor: pointer;transition: background 0.2s;}
+#con #conRight #list li:hover{background: rgba(255,255,255,0.2);}
+#con #conRight #list li img{width: 118px;height: 118px;border: 1px solid #666;}
+#con #conRight #list li .song{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;line-height: 26px;font-size: 16px;color: #fff;padding: 0 5px;}
+#con #conRight #list li .singer{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;line-height: 22px;font-size: 14px;color: #fff;padding: 0 5px;}
+#con #conRight #mvList{width: 95%;height: auto;float: right;display: none;}
+#con #conRight #mvList li{width: 160px;height: 120px;float: left;margin: 20px 20px 0 0;cursor: pointer;transition: background 0.2s;}
+#con #conRight #mvList li:hover{background: rgba(255,255,255,0.2);}
+#con #conRight #mvList li img{width: 158px;height: 88px;border: 1px solid #666;}
+#con #conRight #mvList li .mvName{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;line-height: 30px;font-size: 16px;color: #fff;padding: 0 5px;}
+
+/*音量*/
+#mainVolumeCon{width: 100px;height:30px; background: #666; position: absolute;display: none; z-index: 100;border-radius: 2px;}
+.mainVolumePlan{width: 70px; height: 4px; float: right;margin-right: 10px;margin-top:12px;background: white; position: relative;border-radius: 2px;}
+#mainVolumeGol{display:block;width: 12px; height: 12px; background: #0078d7;border-radius: 50%;border: 2px solid white; position: absolute;top:-6px;left: 58px; cursor: default;}
+#mainVolumeShadow{width: 100%;height: 100%;z-index: 40; position: absolute;display: none;}
+
+/*鼠标滑过音乐*/
+/*#con #conRight #list li:hover .imgBg .imgMask{display: block;}
+#con #conRight #list li .imgBg{width: 120px;height: 120px;position: relative;}
+#con #conRight #list li .imgBg img{width: 118px;height: 118px;border: 1px solid #666;}
+#con #conRight #list li .imgBg .imgMask{width: 120px;height: 120px;background: rgba(255,255,255,0.2);position: absolute;top: 0;left: 0;display: none;}
+#con #conRight #list li .imgBg .imgMask span{display: block;text-align: center;width: 60px;height: 60px;position: absolute;top: 30px;left: 30px;}
+#con #conRight #list li .imgBg .imgMask span i{font-size: 50px;width: 60px;line-height: 60px;color: rgba(255,255,255,0.8);}*/
+/*鼠标滑过MV*/
+/*#con #conRight #mvList li:hover .mvBg .mvMask{display: block;}
+#con #conRight #mvList li .mvBg{width: 160px;height: 90px;position: relative;}
+#con #conRight #mvList li .mvBg img{width: 158px;height: 88px;border: 1px solid #666;}
+#con #conRight #mvList li .mvBg .mvMask{width: 160px;height: 90px;background: rgba(255,255,255,0.2);position: absolute;top: 0;left: 0;display: none;}
+#con #conRight #mvList li .mvBg .mvMask span{display: block;text-align: center;width: 60px;height: 60px;position: absolute;top: 15px;left: 50px;}
+#con #conRight #mvList li .mvBg .mvMask span i{font-size: 50px;width: 60px;line-height: 60px;color: rgba(255,255,255,0.8);}*/

@@ -1,0 +1,39 @@
+/**{margin:0;padding:0;}
+body{font-size:12px;font-family:"微软雅黑";}
+ol,ul,li{list-style:none;}
+a{text-decoration:none;display:block;}
+img{display:block;border:0;}
+input{border:0;}
+clearFix:after{content:".";height:0;clear:both;display:block;overflow:hidden;visibility:hidden;}
+body{width: 100%;height: 100%;overflow: hidden;position: absolute;background: #1a1a20;}*/
+#zyhMv{width: 100%;height: 100%;position: absolute;background: #1a1a20;min-width: 1200px;min-height: 600px;overflow: hidden;display: none;top: 0;}
+#zyhMv #zPlay{width: 150px;height: 150px;position: absolute;left: 50%;top: 40%;margin-left: -75px;margin-top: -75px;background: rgba(0,0,0,0.5);border-radius: 50%;text-align: center;z-index: 2222222222;}
+#zyhMv #zPlay i{line-height: 150px;color: rgba(255,255,255,0.5);font-size: 80px;margin-right: -8px;}
+#zyhMv #zRail{width: 100%;height: 150px;position: absolute;left: 0;bottom: 0; z-index: 2222222222;}
+#zyhMv #zRail #yRail{padding: 20px 30px;height: 24px;cursor: default;}
+#zyhMv #zRail #yRail .ztext{display: block;font-size: 14px;color: #fff;line-height: 24px;float: left;width: 40px;text-align: right;}
+#zyhMv #zRail #yRail #zplan{float: left;margin: 0 18px;padding: 10px 0;width: 88%;height: 4px;position: relative;}
+#zyhMv #zRail #yRail #zplan #zSchedule{height: 4px;border-radius: 2px;background: #64687b;width: 100%;}
+#zyhMv #zRail #yRail #zplan #zProgress{width: 0;height: 4px;background: #fae100;position: absolute;top: 10px;left: 0;border-radius: 2px;}
+#zyhMv #zRail #yRail #zplan #zGlobe{position: absolute;top: 2px;left: 0;width: 16px;height: 16px;background: #fff;text-align: center;border: 2px solid #fff;border-radius: 50%;cursor: pointer;}
+#zyhMv #playBot{width: 100%;height: 86px;background: rgba(0,0,0,0.5);}
+#zyhMv #playBot #zLeft{padding: 25px;width: 20%;height: 36px;float: left;}
+#zyhMv #playBot #zRight{padding: 25px;width: 10%;height: 36px;float: right;}
+#zyhMv #playBot #zLeft .zChoice{width: 25%;float: left;height: 36px;text-align: center;}
+#zyhMv #playBot #zRight .yChoice{width: 50%;float: left;height: 36px;text-align: center;}
+#zyhMv #playBot #zLeft .zChoice span{width: 36px;height: 36px;display: inline-block;cursor: pointer;padding: 5px;}
+#zyhMv #playBot #zRight .yChoice span{width: 36px;height: 36px;display: inline-block;cursor: pointer;padding: 5px;}
+#zyhMv #playBot #zLeft .zChoice span i{width: 36px;height: 36px;text-align: center;color: #edeff4;font-size: 30px;transition: color 0.2s;line-height: 36px;}
+#zyhMv #playBot #zRight .yChoice span i{width: 36px;height: 36px;text-align: center;color: #edeff4;font-size: 30px;transition: color 0.2s;line-height: 36px;}
+#zyhMv #playBot #zLeft .zChoice span:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#zyhMv #playBot #zRight .yChoice span:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#zyhMv #playBot #zLeft .zChoice span:hover i{color: rgba(255,255,255,0.6);}
+#zyhMv #playBot #zRight .yChoice span:hover i{color: rgba(255,255,255,0.6);}
+
+/*音量*/
+#mov{width: 100%;height: 100%;position: absolute;}
+#mov::-webkit-media-controls-enclosure{display:none !important;}
+#volumeCon{width: 100px;height:30px; background: #666; position: absolute;display: none; z-index: 3333333333333333333334;border-radius: 2px;}
+.volumePlan{width: 70px; height: 4px; float: right;margin-right: 10px;margin-top:12px;background: white; position: relative;border-radius: 2px;}
+#volumeGol{display:block;width: 12px; height: 12px; background: #0078d7;border-radius: 50%;border: 2px solid white; position: absolute;top:-6px;left: 58px; cursor: default;}
+#volumeShadow{width: 100%;height: 100%;z-index: 33333333333333333 ; position: absolute;display: none;  }
