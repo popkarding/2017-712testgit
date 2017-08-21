@@ -1,0 +1,64 @@
+/**{margin:0;padding:0;}
+body{font-size:12px;font-family:"微软雅黑";}
+ol,ul,li{list-style:none;}
+a{text-decoration:none;display:block;}
+img{display:block;border:0;}
+input{border:0;}
+clearFix:after{content:".";height:0;clear:both;display:block;overflow:hidden;visibility:hidden;}
+body{width: 100%;height: 100%;overflow: hidden;position: absolute;background: #1a1a20;}*/
+#zyhMusic{width: 100%;height: 100%;position: absolute;min-width: 1200px;min-height: 600px;overflow: hidden;top: 0;}
+#zyhbg{width: 100%;height: 100%;position: absolute;top: 0;left: 0;opacity: 0.5;filter: blur(20px);background: url(../img/bg.jpg) no-repeat center 25%;background-size: cover;}
+#zyhLyric{width: 100%;height: auto;position: absolute;top: 0;left: 0;bottom: 320px;}
+#zyhLyric #zyhDisk{width: 350px;height: 350px;position: absolute;top: 10%;left: 5%;/*background: yellow;*/opacity: 1;}
+#zyhLyric #zyhDisk img{width: 100%;height: 100%;}
+#zyhLyric #zyhLrc{width: 50%;height: 80%;position: absolute;top: 10%;left: 42%;overflow: hidden;/*background: red;*/}
+#zyhLyric #zyhLrc #lrcTxt{width: 100%;text-align: center;height: 0;position:absolute;top:0;left:0;transition:top 0.5s;}
+#zyhLyric #zyhLrc #lrcTxt p{color: rgba(255,255,255,0.6);line-height: 40px;width:100%;text-align:center;font-size: 18px;position:absolute;top:0;}
+#zyhTop{width: 100%;height: 240px;position: absolute;left: 0;bottom: 0;}
+#zyhTop #zyhSong{width: 50%;height: 100px;}
+#zyhTop #zyhSong #zyhImg{width: 78px;height: 78px;margin:15px 0 0 30px;border: 1px solid #ccc;float: left;}
+#zyhTop #zyhSong #zyhTxt{width: 60%;height: 80px;float: left;margin: 15px 0 0 30px;cursor: default;}
+#zyhTop #zyhSong #zyhTxt #zyhHelena{line-height: 40px;font-size: 22px;color: #fff;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+#zyhTop #zyhSong #zyhTxt #zyhSinger{line-height: 30px;font-size: 18px;color: #fff;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+#zyhTop #zyhRail{width: 100%;height: 60px;}
+#zyhTop #zyhRail #Rail{padding: 18px 30px;height: 24px;cursor: default;}
+#zyhTop #zyhRail #Rail .zyhtext{display: block;font-size: 14px;color: #fff;line-height: 24px;float: left;width: 40px;text-align: right;}
+#zyhTop #zyhRail #Rail #zyhplan{float: left;margin: 0px 18px;padding: 10px 0;width: 88%;height: 4px;position: relative;}
+#zyhTop #zyhRail #Rail #zyhplan #zyhSchedule{border-radius: 2px;background: #ccc;height: 4px;width: 100%;}
+#zyhTop #zyhRail #Rail #zyhplan #zyhProgress{width: 0%;height: 4px;background: #a03535;position: absolute;top: 10px;left: 0;border-radius: 2px;}
+#zyhTop #zyhRail #Rail #zyhplan #zyhGlobe{position: absolute;top: 2px;left: 0%;width: 16px;height: 16px;background: #0078d7;text-align: center;border: 2px solid #fff;border-radius: 50%;cursor: pointer;}
+#zyhTop #zyhAction{width: 100%;height: 80px;position: relative;}
+#zyhTop #zyhAction #drag{position: absolute;left: 50%;bottom: 5px;display: block;width: 20px;height: 20px;padding: 2px;text-align: center;cursor: pointer;}
+#zyhTop #zyhAction #drag:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#zyhTop #zyhAction #drag i{width: 20px;line-height: 20px;color: #fff;font-size: 22px;margin-top: -2px;}
+#zyhTop #zyhAction #drag:hover i{color: rgba(255,255,255,0.6);}
+#zyhTop #zyhAction #actionLeft{width: 30%;height: 30px;padding: 25px 30px;float: left;}
+#zyhTop #zyhAction #actionLeft .zyhChoice{width: 20%;height: 30px;text-align: center;float: left;}
+#zyhTop #zyhAction #actionLeft .zyhChoice span{width: 24px;height: 24px;line-height: 24px;display: inline-block;cursor: pointer;padding: 5px;}
+#zyhTop #zyhAction #actionLeft .zyhChoice span:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#zyhTop #zyhAction #actionLeft .zyhChoice i{color: #fff;font-size: 20px;width: 24px;line-height: 24px;transition: color 0.2s;}
+#zyhTop #zyhAction #actionLeft .zyhChoice span:hover i{color: rgba(255,255,255,0.6);}
+#zyhTop #zyhAction #actionRight{width: 10%;height: 30px;padding: 25px 30px;float: right;}
+#zyhTop #zyhAction #actionRight .zyhBein{width: 50%;height: 30px;text-align: center;float: left;}
+#zyhTop #zyhAction #actionRight .zyhBein span{width: 24px;height: 24px;line-height: 24px;display: inline-block;cursor: pointer;padding: 5px;}
+#zyhTop #zyhAction #actionRight .zyhBein span:hover{border-radius: 50%;background: rgba(255,255,255,0.2);}
+#zyhTop #zyhAction #actionRight .zyhBein i{color: #fff;font-size: 20px;width: 24px;line-height: 24px;transition: color 0.2s;}
+#zyhTop #zyhAction #actionRight .zyhBein span:hover i{color: rgba(255,255,255,0.6);}
+#zyhBot{width: 100%;height: auto;position: absolute;left: 0;opacity: 0;}
+#zyhBot #zyhList{padding: 0 30px;margin-top: 20px;}
+#zyhBot #zyhList li{width: 100%;height: 40px;transition: background 0.2s;cursor: default;}
+#zyhBot #zyhList li:hover{background: rgba(255,255,255,0.2);}
+#zyhBot #zyhList li .audioList{width: 48%;height: 40px;line-height: 40px;float: left;display: block;color: #fff;font-size: 16px;padding-left: 20px;}
+#zyhBot #zyhList li .audioList .zyhCheck{width: 40px;float: left;height: 40px;position: relative}
+#zyhBot #zyhList li .audioList .zyhCheck i{font-size: 20px;width: 20px;text-align: center;line-height: 20px;position: absolute;top: 10px;left: 10px;}
+#zyhBot #zyhList li .audioList .transmit{width: 40px;float: left;height: 40px;position: relative}
+#zyhBot #zyhList li .audioList .transmit i{font-size: 16px;width: 20px;text-align: center;line-height: 20px;position: absolute;top: 10px;left: 10px;}
+#zyhBot #zyhList li .audioList .zyhLike{line-height: 40px;float: left;display: block;color: #fff;font-size: 16px;text-indent: 15px;}
+#zyhBot #zyhList li .zyhOrder{width: 30%;height: 40px;line-height: 40px;float: left;display: block;color: #fff;font-size: 16px;text-indent: 20px;}
+#zyhBot #zyhList li .zyhTime{width: 20%;height: 40px;line-height: 40px;float: left;display: block;color: #fff;font-size: 16px;text-indent: 20px;}
+
+/*音量*/
+#auVolumeCon{width: 100px;height:30px; background: #666; position: absolute;display: none; z-index: 3333333333333333333334;border-radius: 2px;}
+.auVolumePlan{width: 70px; height: 4px; float: right;margin-right: 10px;margin-top:12px;background: white; position: relative;border-radius: 2px;}
+#auVolumeGol{display:block;width: 12px; height: 12px; background: #0078d7;border-radius: 50%;border: 2px solid white; position: absolute;top:-6px;left: 58px; cursor: default;}
+#auVolumeShadow{width: 100%;height: 100%;z-index: 1000; position: absolute;display: none;}
